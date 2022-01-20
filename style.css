@@ -23,7 +23,7 @@ body {
 
 #fundoGame {
   width: 950px;
-  height: 630px;
+  height: 560px;
   background-image: url(JogosHTML5/jogo1/imgs/fundo_game.jpg);
   border-color: #fff;
   border-style: solid;
@@ -281,7 +281,7 @@ body {
   height: 50px;
   position: absolute;
   left: 5px;
-  top: 590px;
+  top: 520px;
 }
 
 h2 {
@@ -296,4 +296,21 @@ h2 {
   position: absolute; /*fixa na tela*/
   left: 750px;
   top: 7px;
+}
+
+h3 {
+  font-family: Titulo;
+  font-size: 20px;
+  color: #603a03;
+}
+
+#fim {
+  width: 350px;
+  height: 200px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  text-align: center;
+  padding: 10px;
 }
