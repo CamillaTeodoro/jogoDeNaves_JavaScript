@@ -12,29 +12,29 @@ function start() {
 
   //Principais variáveis do jogo
 
-  var podeAtirar = true;
-  var fimdejogo = false;
-  var pontos = 0;
-  var salvos = 0;
-  var perdidos = 0;
-  var energiaAtual = 3;
-  var jogo = {};
-  var TECLA = {
+  let podeAtirar = true;
+  let fimdejogo = false;
+  let pontos = 0;
+  let salvos = 0;
+  let perdidos = 0;
+  let energiaAtual = 3;
+  let jogo = {};
+  let TECLA = {
     W: 87,
     S: 83,
     D: 68,
   };
   jogo.pressionou = [];
 
-  var velocidade = 5;
-  var posicaoY = Math.random() * 334;
+  let velocidade = 5;
+  let posicaoY = Math.random() * 334;
 
-  var somDisparo = document.getElementById("somDisparo");
-  var somExplosao = document.getElementById("somExplosao");
-  var musica = document.getElementById("musica");
-  var somGameover = document.getElementById("somGameover");
-  var somPerdido = document.getElementById("somPerdido");
-  var somResgate = document.getElementById("somResgate");
+  let somDisparo = document.getElementById("somDisparo");
+  let somExplosao = document.getElementById("somExplosao");
+  let musica = document.getElementById("musica");
+  let somGameover = document.getElementById("somGameover");
+  let somPerdido = document.getElementById("somPerdido");
+  let somResgate = document.getElementById("somResgate");
 
   //Música em loop
   musica.addEventListener(
@@ -81,7 +81,7 @@ function start() {
 
   function movejogador() {
     if (jogo.pressionou[TECLA.W]) {
-      var topo = parseInt($("#jogador").css("top"));
+      let topo = parseInt($("#jogador").css("top"));
       $("#jogador").css("top", topo - 10);
 
       if (topo <= 0) {
@@ -90,7 +90,7 @@ function start() {
     }
 
     if (jogo.pressionou[TECLA.S]) {
-      var topo = parseInt($("#jogador").css("top"));
+      let topo = parseInt($("#jogador").css("top"));
       $("#jogador").css("top", topo + 10);
 
       if (topo >= 440) {
@@ -164,12 +164,12 @@ function start() {
   } // Fecha disparo()
 
   function colisao() {
-    var colisao1 = $("#jogador").collision($("#inimigo1")); // jogador com o inimigo1
-    var colisao2 = $("#jogador").collision($("#inimigo2"));
-    var colisao3 = $("#disparo").collision($("#inimigo1"));
-    var colisao4 = $("#disparo").collision($("#inimigo2"));
-    var colisao5 = $("#jogador").collision($("#amigo"));
-    var colisao6 = $("#inimigo2").collision($("#amigo"));
+    let colisao1 = $("#jogador").collision($("#inimigo1")); // jogador com o inimigo1
+    let colisao2 = $("#jogador").collision($("#inimigo2"));
+    let colisao3 = $("#disparo").collision($("#inimigo1"));
+    let colisao4 = $("#disparo").collision($("#inimigo2"));
+    let colisao5 = $("#jogador").collision($("#amigo"));
+    let colisao6 = $("#inimigo2").collision($("#amigo"));
 
     if (colisao1.length > 0) {
       energiaAtual--;
@@ -250,12 +250,12 @@ function start() {
       "background-image",
       "url(JogosHTML5/jogo1/imgs/explosao.png)"
     );
-    var div = $("#explosao1");
+    let div = $("#explosao1");
     div.css("top", inimigo1Y);
     div.css("left", inimigo1X);
     div.animate({ width: 200, opacity: 0 }, "slow"); //animate é função do jquery
 
-    var tempoExplosao = window.setInterval(removeExplosao, 1000);
+    let tempoExplosao = window.setInterval(removeExplosao, 1000);
 
     function removeExplosao() {
       div.remove();
@@ -267,7 +267,7 @@ function start() {
   //Reposiciona Inimigo2
 
   function reposicionaInimigo2() {
-    var tempoColisao4 = window.setInterval(reposiciona4, 5000);
+    let tempoColisao4 = window.setInterval(reposiciona4, 5000);
 
     function reposiciona4() {
       window.clearInterval(tempoColisao4);
@@ -288,12 +288,12 @@ function start() {
       "background-image",
       "url(JogosHTML5/jogo1/imgs/explosao.png)"
     );
-    var div2 = $("#explosao2");
+    let div2 = $("#explosao2");
     div2.css("top", inimigo2Y);
     div2.css("left", inimigo2X);
     div2.animate({ width: 200, opacity: 0 }, "slow");
 
-    var tempoExplosao2 = window.setInterval(removeExplosao2, 1000);
+    let tempoExplosao2 = window.setInterval(removeExplosao2, 1000);
 
     function removeExplosao2() {
       div2.remove();
@@ -308,7 +308,7 @@ function start() {
     $("#fundoGame").append("<div id='explosao3' class='anima4'></div");
     $("#explosao3").css("top", amigoY);
     $("#explosao3").css("left", amigoX);
-    var tempoExplosao3 = window.setInterval(resetaExplosao3, 1000);
+    let tempoExplosao3 = window.setInterval(resetaExplosao3, 1000);
 
     function resetaExplosao3() {
       $("#explosao3").remove();
@@ -319,7 +319,7 @@ function start() {
 
   //Reposiciona Amigo
   function reposicionaAmigo() {
-    var tempoAmigo = window.setInterval(reposiciona6, 5000);
+    let tempoAmigo = window.setInterval(reposiciona6, 5000);
 
     function reposiciona6() {
       window.clearInterval(tempoAmigo);
