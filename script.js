@@ -1,3 +1,17 @@
+/** @type {HTMLAudioElement} */
+const somDisparo = document.querySelector("#somDisparo");
+/** @type {HTMLAudioElement} */
+const somExplosao = document.querySelector("#somExplosao");
+
+/** @type {HTMLAudioElement} */
+const musica = document.querySelector("#musica");
+/** @type {HTMLAudioElement} */
+const somGameover = document.querySelector("#somGameover");
+/** @type {HTMLAudioElement} */
+const somPerdido = document.querySelector("#somPerdido");
+/** @type {HTMLAudioElement} */
+const somResgate = document.querySelector("#somResgate");
+
 function start() {
   // Inicio da função start()
 
@@ -28,13 +42,6 @@ function start() {
 
   let velocidade = 5;
   let posicaoY = Math.random() * 334;
-
-  let somDisparo = document.getElementById("somDisparo");
-  let somExplosao = document.getElementById("somExplosao");
-  let musica = document.getElementById("musica");
-  let somGameover = document.getElementById("somGameover");
-  let somPerdido = document.getElementById("somPerdido");
-  let somResgate = document.getElementById("somResgate");
 
   //Música em loop
   musica.addEventListener(
